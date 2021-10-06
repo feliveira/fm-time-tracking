@@ -1,0 +1,336 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+    color: var(--desatured-blue);
+}
+
+:root {
+    --blue: hsl(246, 80%, 60%);
+    --work: hsl(15, 100%, 70%);
+    --play: hsl(195, 74%, 62%);
+    --study: hsl(348, 100%, 68%);
+    --exercise: hsl(145, 58%, 55%);
+    --social: hsl(264, 64%, 52%);
+    --self-care: hsl(43, 84%, 65%);
+    --very-dark-blue: hsl(226, 43%, 10%);
+    --dark-blue: hsl(235, 46%, 20%);
+    --desatured-blue: hsl(235, 45%, 61%);
+    --pale-blue: hsl(236, 100%, 87%);
+}
+
+html {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--very-dark-blue);
+}
+
+main {
+    min-width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: .3fr 1fr 1fr;
+    gap: 20px;
+    grid-template-areas:
+    "x x x x"
+    "c1 c2 c3 c4"
+    "c1 c5 c6 c7"
+    ;
+}
+
+.card {
+    width: 250px;
+    min-height: 250px;
+    background-color: hsl(235, 46%, 20%);
+    border-radius: 10px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    display: flex;
+}
+
+.card-1 {
+    display: flex;
+    flex-direction: column;
+    grid-area: c1;
+}
+
+#profile {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--blue);
+    border-radius: 10px;
+    padding-left: 10%;
+    height: 70%;
+    
+}
+
+#profile img{
+    align-self: baseline;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    width: 90px;
+    height: 90px;
+    margin: 15% 0 20%;
+}
+
+#report p {
+    color: var(--pale-blue);
+}
+
+#report h1 {
+   font-weight: 300;
+   color: var(--pale-blue);
+   font-size: 40px;
+}
+
+#options {
+    display: flex;
+    flex-direction: column;
+    margin: 10% 10%;
+    color: var(--desatured-blue);  
+}
+
+#options p {
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#options p:hover {
+    color: var(--pale-blue);
+    transition: 0.5s;
+}
+
+.card-2 {
+    background: url(images/icon-work.svg) no-repeat;
+    background-position: right 8% top;
+    background-color: var(--work);;
+    grid-area: c2;
+}
+.card-3 {
+    background: url(images/icon-play.svg) no-repeat;
+    background-position: right 8% top;
+    background-color: var(--play);
+    grid-area: c3;
+}
+.card-4 {
+    background: url(images/icon-study.svg) no-repeat;
+    background-position: right 8% top;
+    background-color: var(--study);
+    grid-area: c4;
+}
+.card-5 {
+    background: url(images/icon-exercise.svg) no-repeat;
+    background-position: right 8% top;
+    background-color: var(--exercise);
+    grid-area: c5;
+}
+.card-6 {
+    background: url(images/icon-social.svg) no-repeat;
+    background-position: right 8% top;
+    background-color: var(--social);
+    grid-area: c6;
+}
+.card-7 {
+    background: url(images/icon-self-care.svg) no-repeat;
+    background-position: right 8% top;
+    background-color: var(--self-care);
+    grid-area: c7;
+}
+
+.card-content:hover {
+    background-color: hsl(235, 46%, 25%);
+    transition: 0.6s;
+}
+
+.card-content {
+    width: 100%;
+    margin-top: 20%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-radius: 10px;
+    background-color:hsl(235, 46%, 20%);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.card-header h2 {
+    color: var(--pale-blue);
+    font-weight: 400;
+    font-size: 18px;
+    margin-top: 10%;
+    padding-right: 30%;
+}
+
+.card-header p {
+    margin-top: 3.5%;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.card-header p:hover {
+    color: var(--pale-blue);
+    transition: 0.5s;
+}
+
+.current-value {
+    color: var(--pale-blue);
+    font-size: 48px;
+    margin-left: 10%;
+    margin-top: 10%;
+    font-weight: 300;
+}
+
+.previous-value {
+    margin-left: 10%;
+    margin-top: 3%;
+}
+
+.active {
+    color: #ededed;
+}
+
+@media (max-width: 300px){
+    #options p {
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .card-content {
+        min-height: 120px;
+    }
+}
+
+@media (width: 540px) {
+    .current-value {
+        padding-left: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    #container {
+        display: flex;
+        flex-direction: column;
+    }
+    .card {
+        width: 80vw;
+        min-height: 150px;
+        margin-bottom: 20px;
+    }
+
+    #profile {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 100px;
+    }
+    #profile img {
+        width: 60px;
+        height: 60px;
+        margin-top: 20px;
+    }
+    #report {
+        margin-left: 5%;
+    }
+
+    #report h1 {
+        font-weight: 300;
+        color: var(--pale-blue);
+        font-size: 18px;
+     }
+    #options {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        height: 20px;
+    }
+
+    .card.card-1 {
+        min-height: 50px;
+    }
+
+    .card-content {
+        margin-top: 15%;
+        height: 110px;
+    }
+
+    .card.card-2,.card.card-3,.card.card-4,.card.card-5,.card.card-6,.card.card-7 {
+        height: 120px;
+    }
+    .current-value  {
+        font-size: 28px;
+        margin: 0 0 0 32px;
+    }
+
+    .previous-value {
+        font-size: 14px;
+        margin-right: 34px;
+    }
+
+    .values {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 900px ) {
+    #report h1 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    .card {
+        width: 160px;
+        min-height: 160px;
+    }
+    .card-header p {
+        margin-top: 1.4%;
+    }
+    #daily {
+        margin-top: 10px;
+    }
+    .current-value {
+        font-size: 26px;
+    }
+    .card-2 .card-header h2 {
+        margin-left: 6px;
+    }
+    .card-3 .card-header h2 {
+        margin-left: 3px;
+    }
+    .card-4 .card-header h2 {
+        margin-left: 6px;
+        padding: 0 48px 0 0;
+    }
+    .card-5 .card-header h2 {
+        margin-left: 4px;
+        padding: 0 29px 0 0;
+    }
+    .card-6 .card-header h2 {
+        margin-left: 3px;
+        padding: 0 42px 0 0;
+    }
+    .card-7 .card-header h2 {
+        margin-left: 8px;
+        padding: 0 20px 0 0;
+    }
+}
+
+@media(min-width: 901px) and (max-width: 1279px) {
+    .card {
+        width: 220px;
+        min-height: 220px;
+    }
+}
