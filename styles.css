@@ -5,6 +5,8 @@
     font-family: 'Rubik', sans-serif;
     color: var(--desatured-blue);
 }
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
 
 :root {
     --blue: hsl(246, 80%, 60%);
